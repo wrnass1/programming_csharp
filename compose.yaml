@@ -10,19 +10,45 @@
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test_user -d test_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   
   liquibase:
-    image: liquibase/liquibase:postgresql
+    image: liquibase/liquibase:latest
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     command:
+      - "--driver=org.postgresql.Driver"
+      - "--classpath=/liquibase/lib/postgresql.jar"
       - "--url=jdbc:postgresql://postgres:5432/test_db"
       - "--username=test_user"
       - "--password=test_password"
       - "--changeLogFile=changelog.xml"
+      - "--searchPath=/liquibase/changelog"
       - "update"
     volumes:
-      - ./liquibase:/liquibase/changelog
+      - ./PracDocker/Liquibase:/liquibase/changelog
+      - ./liquibase-drivers:/liquibase/lib
+
+  app:
+    build:
+      context: .
+      dockerfile: PracDocker/Dockerfile
+    container_name: test_app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      liquibase:
+        condition: service_completed_successfully
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=test_db;Username=test_user;Password=test_password
+    ports:
+      - "8080:8080"
 
 volumes:
   postgres_data:

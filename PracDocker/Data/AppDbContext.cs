@@ -12,4 +12,10 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>().ToTable("users");
+        base.OnModelCreating(modelBuilder);
+    }
 }
