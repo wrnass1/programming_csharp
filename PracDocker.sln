@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracDocker", "PracDocker\PracDocker.csproj", "{79D0B009-18DC-4371-9A91-18B6FAE34B34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8ECAEA81-6EE3-4BD9-BFAF-95B5627ED1D4}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D0B009-18DC-4371-9A91-18B6FAE34B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D0B009-18DC-4371-9A91-18B6FAE34B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D0B009-18DC-4371-9A91-18B6FAE34B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D0B009-18DC-4371-9A91-18B6FAE34B34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
