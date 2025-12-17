@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "hmO2py9HH2s3itrinCOj094chhI/ee0f38HXwGT8izU=",
-  "Source": "PracDocker",
-  "BasePath": "_content/PracDocker",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"GPKLiu30SQ+Kji2fgqQ4nzGpaq2f0DHzAXWf+i29kMg=","Source":"PracDocker","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
